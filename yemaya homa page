@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yemayá Zeilcharter | Luxe zeilbeleving in Zeeland</title>
+  <meta name="description" content="Ervaar Yemayá Zeilcharter aan boord van een Sweden Yachts 45. Dagtochten, weekends, midweeks, events en culinaire zeilbeleving vanuit Wemeldinge." />
+  <style>
+    :root{
+      --bg:#071824;
+      --bg-soft:#0c2334;
+      --card:#0f2b40;
+      --card-2:#133550;
+      --line:rgba(255,255,255,.10);
+      --text:#eaf3f8;
+      --muted:#a8bfce;
+      --gold:#d9ab52;
+      --gold-2:#f1c977;
+      --white:#ffffff;
+      --shadow:0 20px 50px rgba(0,0,0,.28);
+      --radius:22px;
+      --max:1200px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(34,91,128,.18), transparent 35%),
+        linear-gradient(180deg, #06131d 0%, #081c29 100%);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    button{font:inherit}
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .section{
+      padding:88px 0;
+      position:relative;
+    }
+
+    .section-head{
+      max-width:760px;
+      margin-bottom:28px;
+    }
+    .eyebrow{
+      display:inline-block;
+      color:var(--gold-2);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .section-head h2{
+      font-size:clamp(28px,4vw,44px);
+      line-height:1.1;
+      margin-bottom:12px;
+    }
+    .section-head p{
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      transition:.22s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      color:#1a1a1a;
+      box-shadow:0 8px 24px rgba(217,171,82,.25);
+    }
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.02)}
+    .btn-outline{
+      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+    }
+    .btn-outline:hover{
+      background:rgba(255,255,255,.06);
+      transform:translateY(-2px);
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+    }
+
+    /* Header */
+    .header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(14px);
+      background:rgba(5,14,22,.72);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:78px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .brand-badge{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      color:#14202a;
+      font-weight:900;
+      box-shadow:0 10px 26px rgba(217,171,82,.24);
+      flex:none;
+    }
+    .brand-text{
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+    .brand-text small{
+      display:block;
+      color:var(--muted);
+      font-weight:600;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .nav-links a{
+      color:var(--muted);
+      font-size:15px;
+      transition:.2s ease;
+      position:relative;
+    }
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:var(--text);
+    }
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:var(--gold);
+      transition:.22s ease;
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after{
+      width:100%;
+    }
+    .nav-cta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .menu-toggle{
+      display:none;
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      cursor:pointer;
+    }
+    .mobile-menu{
+      display:none;
+      padding:0 0 18px;
+    }
+    .mobile-menu.open{display:block}
+    .mobile-menu .mobile-links{
+      display:grid;
+      gap:10px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+    }
+    .mobile-menu a{
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.03);
+    }
+
+    /* Hero */
+    .hero{
+      padding:34px 0 36px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-wrap{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .hero-copy{
+      padding:34px;
+      min-height:620px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-copy::before{
+      content:"";
+      position:absolute;
+      inset:auto -80px -80px auto;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(217,171,82,.18), transparent 70%);
+      pointer-events:none;
+    }
+    .hero-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      color:var(--gold-2);
+      width:max-content;
+      margin-bottom:16px;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-weight:800;
+    }
+    .hero-copy h1{
+      font-size:clamp(38px,6vw,66px);
+      line-height:1.02;
+      margin-bottom:16px;
+      max-width:12ch;
+    }
+    .hero-copy p{
+      color:var(--muted);
+      font-size:18px;
+      max-width:650px;
+      margin-bottom:22px;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:22px;
+    }
+    .hero-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:6px;
+    }
+    .hero-tags span{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--text);
+      font-size:14px;
+    }
+
+    .hero-slider{
+      min-height:620px;
+      overflow:hidden;
+      position:relative;
+    }
+    .slides{
+      height:100%;
+      position:relative;
+    }
+    .slide{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transform:scale(1.04);
+      transition:opacity .7s ease, transform 4.5s ease;
+      background-size:cover;
+      background-position:center;
+    }
+    .slide.active{
+      opacity:1;
+      transform:scale(1);
+    }
+    .slide::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(5,14,22,.15), rgba(5,14,22,.55));
+    }
+    .slide-caption{
+      position:absolute;
+      left:24px;
+      right:24px;
+      bottom:22px;
+      z-index:2;
+      padding:18px 18px 16px;
+      border-radius:18px;
+      background:rgba(5,14,22,.56);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter:blur(10px);
+    }
+    .slide-caption strong{
+      display:block;
+      font-size:22px;
+      margin-bottom:6px;
+    }
+    .slide-caption span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .slider-controls{
+      position:absolute;
+      top:18px;
+      right:18px;
+      z-index:3;
+      display:flex;
+      gap:8px;
+    }
+    .slider-btn{
+      width:42px;
+      height:42px;
+      border:none;
+      border-radius:50%;
+      background:rgba(255,255,255,.10);
+      color:var(--white);
+      backdrop-filter:blur(10px);
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .slider-btn:hover{background:rgba(255,255,255,.18)}
+    .slider-dots{
+      position:absolute;
+      left:24px;
+      bottom:110px;
+      z-index:3;
+      display:flex;
+      gap:8px;
+    }
+    .slider-dots button{
+      width:10px;
+      height:10px;
+      border:none;
+      border-radius:999px;
+      background:rgba(255,255,255,.32);
+      cursor:pointer;
+      transition:.22s ease;
+    }
+    .slider-dots button.active{
+      width:28px;
+      background:var(--gold);
+    }
+
+    /* stats */
+    .stats{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .stat{
+      padding:20px;
+      text-align:left;
+    }
+    .stat strong{
+      display:block;
+      font-size:34px;
+      line-height:1;
+      color:var(--gold-2);
+      margin-bottom:8px;
+    }
+    .stat span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* grids */
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:22px;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .content-card{
+      padding:24px;
+      height:100%;
+      transition:transform .2s ease, border-color .2s ease;
+    }
+    .content-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(217,171,82,.34);
+    }
+    .content-card h3{
+      font-size:24px;
+      margin-bottom:10px;
+    }
+    .content-card p{
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+    .list{
+      list-style:none;
+      display:grid;
+      gap:10px;
+      margin-top:10px;
+    }
+    .list li{
+      position:relative;
+      padding-left:18px;
+      color:var(--text);
+    }
+    .list li::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--gold);
+      position:absolute;
+      left:0;
+      top:10px;
+      box-shadow:0 0 0 6px rgba(217,171,82,.10);
+    }
+
+    /* tabs */
+    .tabs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:12px 0 18px;
+    }
+    .tab-btn{
+      border:none;
+      padding:12px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.08);
+      cursor:pointer;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .tab-btn.active{
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      color:#1a1a1a;
+      border-color:transparent;
+    }
+    .tab-panel{
+      display:none;
+    }
+    .tab-panel.active{
+      display:grid;
+    }
+
+    /* gallery */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:16px;
+      grid-auto-rows:230px;
+    }
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      cursor:pointer;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      isolation:isolate;
+    }
+    .gallery-item:nth-child(1){grid-row:span 2}
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
+      filter:saturate(1.05);
+    }
+    .gallery-item:hover img{transform:scale(1.06)}
+    .gallery-item::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, transparent 35%, rgba(5,14,22,.62) 100%);
+      z-index:1;
+    }
+    .gallery-item span{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:14px;
+      z-index:2;
+      font-weight:700;
+      font-size:16px;
+    }
+
+    /* feature band */
+    .feature-band{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:26px;
+      align-items:center;
+    }
+    .feature-photo{
+      min-height:520px;
+      overflow:hidden;
+      position:relative;
+    }
+    .feature-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .feature-copy{
+      padding:30px;
+    }
+    .feature-copy h3{
+      font-size:32px;
+      margin-bottom:10px;
+    }
+    .feature-copy p{
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+
+    /* testimonials */
+    .testimonial-wrap{
+      position:relative;
+      overflow:hidden;
+    }
+    .testimonial-track{
+      display:flex;
+      transition:transform .5s ease;
+    }
+    .testimonial{
+      min-width:100%;
+      padding:28px;
+    }
+    .testimonial p{
+      font-size:20px;
+      color:var(--text);
+      margin-bottom:18px;
+    }
+    .testimonial strong{
+      color:var(--gold-2);
+      display:block;
+    }
+    .testimonial small{
+      color:var(--muted);
+    }
+
+    /* faq */
+    .faq{
+      display:grid;
+      gap:14px;
+    }
+    .faq-item{
+      overflow:hidden;
+    }
+    .faq-q{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      text-align:left;
+      padding:18px 20px;
+      background:transparent;
+      color:var(--text);
+      border:none;
+      cursor:pointer;
+      font-weight:800;
+      font-size:18px;
+    }
+    .faq-q span:last-child{
+      color:var(--gold-2);
+      font-size:24px;
+      line-height:1;
+    }
+    .faq-a{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .32s ease;
+      color:var(--muted);
+      padding:0 20px;
+    }
+    .faq-a-inner{
+      padding:0 0 18px;
+    }
+
+    /* contact */
+    .contact-box{
+      padding:34px;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:24px;
+      background:
+        radial-gradient(circle at top right, rgba(217,171,82,.12), transparent 25%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+    }
+    .contact-box h3{
+      font-size:36px;
+      line-height:1.08;
+      margin-bottom:12px;
+    }
+    .contact-box p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+    .contact-mini{
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .contact-mini h4{
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--gold-2);
+      margin-bottom:8px;
+    }
+    .contact-mini p,
+    .contact-mini a{
+      color:var(--text);
+      font-size:15px;
+      word-break:break-word;
+    }
+
+    /* lightbox */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(3,9,14,.90);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:2000;
+      padding:26px;
+    }
+    .lightbox.open{display:flex}
+    .lightbox-inner{
+      position:relative;
+      max-width:1100px;
+      width:100%;
+    }
+    .lightbox img{
+      width:100%;
+      max-height:82vh;
+      object-fit:contain;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+    }
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next{
+      position:absolute;
+      border:none;
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      cursor:pointer;
+      backdrop-filter:blur(10px);
+    }
+    .lightbox-close{top:-16px;right:-10px}
+    .lightbox-prev{left:12px;top:50%;transform:translateY(-50%)}
+    .lightbox-next{right:12px;top:50%;transform:translateY(-50%)}
+
+    /* reveal */
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* footer */
+    .footer{
+      padding:26px 0 40px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .footer-links{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .footer a:hover{color:var(--text)}
+
+    @media (max-width:1080px){
+      .hero-wrap,
+      .feature-band,
+      .contact-box{
+        grid-template-columns:1fr;
+      }
+      .hero-copy,
+      .hero-slider{
+        min-height:unset;
+      }
+      .stats,
+      .grid-4{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+      }
+      .gallery-item:nth-child(1){
+        grid-column:span 2;
+        grid-row:span 1;
+      }
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:840px){
+      .nav-links,.nav-cta .btn{display:none}
+      .menu-toggle{display:inline-grid;place-items:center}
+      .stats,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+      .gallery-item:nth-child(1){grid-column:auto}
+      .section{padding:72px 0}
+      .hero-copy{padding:24px}
+      .hero-copy h1{max-width:none}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto}
+      .slide,.testimonial-track,.reveal{transition:none!important}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="brand">
+        <div class="brand-badge">YZ</div>
+        <div class="brand-text">
+          Yemayá Zeilcharter
+          <small>Wemeldinge • Zeeland</small>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#hero" class="active">Home</a>
+        <a href="#over">Over ons</a>
+        <a href="#arrangementen">Arrangementen</a>
+        <a href="#schip">Het schip</a>
+        <a href="#gallery">Galerij</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="tel:+32465084288" class="btn btn-outline">Bel ons</a>
+        <a href="#contact" class="btn btn-primary">Boek uw tocht</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
+
+    <div class="container mobile-menu" id="mobileMenu">
+      <div class="mobile-links">
+        <a href="#hero">Home</a>
+        <a href="#over">Over ons</a>
+        <a href="#arrangementen">Arrangementen</a>
+        <a href="#schip">Het schip</a>
+        <a href="#gallery">Galerij</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="container hero-wrap">
+        <div class="card hero-copy reveal visible">
+          <div class="hero-pill">Exclusieve zeilbeleving in Zeeland</div>
+          <h1>Vakantie op het water, maar dan écht professioneel</h1>
+          <p>
+            Stap aan boord van Yemayá en beleef een stijlvolle, comfortabele en persoonlijke zeilervaring
+            met een Sweden Yachts 45, gratis schipper en arrangementen voor gezinnen, vrienden en bedrijven.
+          </p>
+          <div class="hero-actions">
+            <a href="#arrangementen" class="btn btn-primary">Bekijk arrangementen</a>
+            <a href="#gallery" class="btn btn-outline">Bekijk foto’s</a>
+          </div>
+          <div class="hero-tags">
+            <span>Sweden Yachts 45</span>
+            <span>14,10 meter</span>
+            <span>Gratis schipper</span>
+            <span>Dag, weekend & midweek</span>
+          </div>
+
+          <div class="stats">
+            <div class="card stat">
+              <strong data-count="14">0</strong>
+              <span>Meter zeiljacht</span>
+            </div>
+            <div class="card stat">
+              <strong data-count="8">0</strong>
+              <span>Personen per dagtocht</span>
+            </div>
+            <div class="card stat">
+              <strong data-count="2">0</strong>
+              <span>Gastenkajuiten</span>
+            </div>
+            <div class="card stat">
+              <strong data-count="2026">0</strong>
+              <span>Seizoen vanaf mei</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card hero-slider reveal">
+          <div class="slider-controls">
+            <button class="slider-btn" id="prevSlide" aria-label="Vorige slide">‹</button>
+            <button class="slider-btn" id="nextSlide" aria-label="Volgende slide">›</button>
+          </div>
+
+          <div class="slides" id="heroSlides">
+            <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80');">
+              <div class="slide-caption">
+                <strong>Luxe zeilen in Zeeland</strong>
+                <span>Een rustige, stijlvolle ervaring op open water.</span>
+              </div>
+            </div>
+            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1600&q=80');">
+              <div class="slide-caption">
+                <strong>Comfort aan boord</strong>
+                <span>Ruime leefruimte, kajuiten, keuken, wifi en meer.</span>
+              </div>
+            </div>
+            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1528150177508-bb5b4ca38f30?auto=format&fit=crop&w=1600&q=80');">
+              <div class="slide-caption">
+                <strong>Perfect voor groepen</strong>
+                <span>Voor familie-uitstappen, vrienden en teambuilding.</span>
+              </div>
+            </div>
+            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1600&q=80');">
+              <div class="slide-caption">
+                <strong>Meer dan alleen varen</strong>
+                <span>Ook gastronomie en een complete dagbeleving aan boord.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider-dots" id="heroDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVER -->
+    <section class="section" id="over">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Over Yemayá</span>
+          <h2>Een nieuwe naam onder de zeilcharters</h2>
+          <p>
+            Persoonlijke ontvangst, een professionele uitstraling en een warme sfeer staan centraal.
+            Schipper Jos en zijn vrouw verwelkomen gasten aan boord voor een echte zeilbeleving.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card content-card reveal">
+            <h3>Persoonlijke ontvangst</h3>
+            <p>
+              Aan boord draait het om gastvrijheid, natuur, wind, ontspanning en een stijlvolle dag op het water.
+            </p>
+            <ul class="list">
+              <li>Welkom voor gezinnen, vrienden en bedrijven</li>
+              <li>Geschikt voor familie-uitstappen en teambuilding</li>
+              <li>Sportief en ook een beetje culinair verwend</li>
+            </ul>
+          </article>
+
+          <article class="card content-card reveal">
+            <h3>Planning en seizoen</h3>
+            <p>
+              Het charterseizoen start vanaf mei 2026 en de thuisbasis is Jachthaven Wemeldinge in Zeeland.
+            </p>
+            <ul class="list">
+              <li>Yemayá in afwerking bij Sweden Yachts</li>
+              <li>Aankomst voorzien in Wemeldinge</li>
+              <li>Boek tijdig voor de eerste afvaarten</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARRANGEMENTEN -->
+    <section class="section" id="arrangementen">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Arrangementen</span>
+          <h2>Interactieve indeling per type ervaring</h2>
+          <p>
+            Kies hieronder wat het beste past bij uw plannen en bekijk direct de bijhorende invulling.
+          </p>
+        </div>
+
+        <div class="tabs reveal">
+          <button class="tab-btn active" data-tab="dagtocht">Dagtocht</button>
+          <button class="tab-btn" data-tab="weekend">Weekend / midweek</button>
+          <button class="tab-btn" data-tab="events">Feestjes & teambuilding</button>
+        </div>
+
+        <div class="tab-panel active grid-3" id="dagtocht">
+          <article class="card content-card">
+            <h3>Individuele dagtocht</h3>
+            <p>Ideaal voor wie een volledige zeildag wil beleven zonder een meerdaags verblijf.</p>
+            <ul class="list">
+              <li>Boekbaar via inschrijving</li>
+              <li>Maximaal 8 personen</li>
+              <li>Vol = vol</li>
+            </ul>
+          </article>
+          <article class="card content-card">
+            <h3>Wat is inbegrepen</h3>
+            <p>Een complete dag met ontvangst, varen, begeleiding en ontspanning.</p>
+            <ul class="list">
+              <li>Welkomstdrankje</li>
+              <li>Professionele begeleiding</li>
+              <li>Lunch en afsluiter met hapjes</li>
+            </ul>
+          </article>
+          <article class="card content-card">
+            <h3>Voor wie</h3>
+            <p>Perfect voor koppels, kleine groepen en nieuwsgierige dagzeilers.</p>
+            <ul class="list">
+              <li>Geen ervaring vereist</li>
+              <li>Persoonlijke sfeer</li>
+              <li>Comfortabel en toegankelijk</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="tab-panel grid-3" id="weekend">
+          <article class="card content-card">
+            <h3>Weekend aan boord</h3>
+            <p>Meer tijd op het water, meer rust en een intensere beleving van Zeeland.</p>
+            <ul class="list">
+              <li>Overnachten aan boord</li>
+              <li>Meer ontspanning</li>
+              <li>Ideaal voor kleine gezelschappen</li>
+            </ul>
+          </article>
+          <article class="card content-card">
+            <h3>Midweek arrangement</h3>
+            <p>Voor gasten die het zeilen willen combineren met comfort, sfeer en een rustig ritme.</p>
+            <ul class="list">
+              <li>Geschikt voor langere beleving</li>
+              <li>Ruime leefruimte en kajuiten</li>
+              <li>Flexibele invulling mogelijk</li>
+            </ul>
+          </article>
+          <article class="card content-card">
+            <h3>Aan boord</h3>
+            <p>Het schip biedt alles om comfortabel te genieten tijdens een langer verblijf.</p>
+            <ul class="list">
+              <li>2 gastenkajuiten</li>
+              <li>Badkamer met douche</li>
+              <li>Keuken, koelkast en diepvriezer</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="tab-panel grid-3" id="events">
+          <article class="card content-card">
+            <h3>Verrassingsfeestjes</h3>
+            <p>Een luxe zeiljacht als decor voor een unieke verrassing op het water.</p>
+            <ul class="list">
+              <li>Intieme en exclusieve setting</li>
+              <li>Bijzonder voor familie of vrienden</li>
+              <li>Meer memorabel dan een standaard locatie</li>
+            </ul>
+          </article>
+          <article class="card content-card">
+            <h3>Bedrijfsevents</h3>
+            <p>Een zeildag werkt uitstekend voor verbinding, rust en samenwerking binnen teams.</p>
+            <ul class="list">
+              <li>Teambuilding met karakter</li>
+              <li>Professionele begeleiding</li>
+              <li>Stijlvolle ontvangst</li>
+            </ul>
+          </article>
+          <article class="card content-card">
+            <h3>Op maat</h3>
+            <p>De dag kan afgestemd worden op het type gezelschap en gewenste sfeer.</p>
+            <ul class="list">
+              <li>Zakelijk of privé</li>
+              <li>Meer culinair of meer sportief</li>
+              <li>Persoonlijke aanpak</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHIP -->
+    <section class="section" id="schip">
+      <div class="container feature-band">
+        <div class="card feature-photo reveal">
+          <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1400&q=80" alt="Sailboat on the water">
+        </div>
+
+        <div class="card feature-copy reveal">
+          <span class="eyebrow">Het schip</span>
+          <h3>Sweden Yachts 45 – snel, elegant en comfortabel</h3>
+          <p>
+            Een performance cruiser zonder compromissen, ontworpen voor een hoogwaardige zeilervaring.
+            De combinatie van uitstraling, snelheid en comfort maakt dit het pronkstuk van de ervaring.
+          </p>
+          <div class="grid-2" style="margin-top:18px;">
+            <div class="content-card card" style="padding:20px;">
+              <h3 style="font-size:18px;">Comfort</h3>
+              <ul class="list">
+                <li>2 gastenkamers met slaapplaatsen</li>
+                <li>Ruime leefruimte</li>
+                <li>Wifi, televisie en bar</li>
+              </ul>
+            </div>
+            <div class="content-card card" style="padding:20px;">
+              <h3 style="font-size:18px;">Uitrusting</h3>
+              <ul class="list">
+                <li>Badkamer met douche</li>
+                <li>3-pits fornuis</li>
+                <li>Koelkast en diepvriezer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Services & veiligheid</span>
+          <h2>Een complete ervaring, niet alleen een boottocht</h2>
+          <p>
+            Veiligheid, comfort en begeleiding zijn zichtbaar geïntegreerd in de dagindeling.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card content-card reveal">
+            <h3 style="font-size:20px;">Veiligheid</h3>
+            <ul class="list">
+              <li>Reddingsvest voor elk bemanningslid</li>
+              <li>EHBO-box aan boord</li>
+              <li>Veiligheidsbriefing vóór vertrek</li>
+            </ul>
+          </article>
+
+          <article class="card content-card reveal">
+            <h3 style="font-size:20px;">Begeleiding</h3>
+            <ul class="list">
+              <li>Ervaren schipper</li>
+              <li>Geen zeilervaring nodig</li>
+              <li>Duidelijke en correcte afspraken</li>
+            </ul>
+          </article>
+
+          <article class="card content-card reveal">
+            <h3 style="font-size:20px;">Comfort</h3>
+            <ul class="list">
+              <li>Zeilkledij voorzien</li>
+              <li>Warm en droog bij minder weer</li>
+              <li>Persoonlijke aanpak</li>
+            </ul>
+          </article>
+
+          <article class="card content-card reveal">
+            <h3 style="font-size:20px;">Sfeer</h3>
+            <ul class="list">
+              <li>Welkomstdrankje</li>
+              <li>Uitgebreide lunch</li>
+              <li>Hapjes en drankje achteraf</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GASTRONOMIE -->
+    <section class="section" id="gastronomie">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Gastronomie</span>
+          <h2>Ook culinair mag het bijzonder zijn</h2>
+          <p>
+            Aan boord kan de dag worden aangevuld met ontbijt, lunch en een verzorgde gastronomische invulling op maat.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card content-card reveal">
+            <h3>Ontbijt</h3>
+            <p>Start de dag met een luxe ontbijt bij het aanmonsteren.</p>
+          </article>
+          <article class="card content-card reveal">
+            <h3>Dagverse lunch</h3>
+            <p>Gerechten met focus op versheid, kwaliteit en een verzorgde presentatie.</p>
+          </article>
+          <article class="card content-card reveal">
+            <h3>Op maat samengesteld</h3>
+            <p>Van eenvoudig en elegant tot uitgebreider en feestelijk, afhankelijk van uw gezelschap.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Fotogalerij</span>
+          <h2>Meer beelden voor een rijkere, immersieve uitstraling</h2>
+          <p>
+            Deze galerij gebruikt meerdere grote beelden, hover-overlays en een lightbox zodat de site veel levendiger aanvoelt.
+          </p>
+        </div>
+
+        <div class="gallery-grid reveal" id="galleryGrid">
+          <div class="gallery-item" data-index="0">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=80" alt="Open water">
+            <span>Open water & vrijheid</span>
+          </div>
+          <div class="gallery-item" data-index="1">
+            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=80" alt="Luxury yacht atmosphere">
+            <span>Luxe uitstraling</span>
+          </div>
+          <div class="gallery-item" data-index="2">
+            <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1000&q=80" alt="Sailing yacht">
+            <span>Zeilen in stijl</span>
+          </div>
+          <div class="gallery-item" data-index="3">
+            <img src="https://images.unsplash.com/photo-1528150177508-bb5b4ca38f30?auto=format&fit=crop&w=1000&q=80" alt="Sea travel">
+            <span>Groepen & beleving</span>
+          </div>
+          <div class="gallery-item" data-index="4">
+            <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1000&q=80" alt="Deck details">
+            <span>Comfort aan dek</span>
+          </div>
+          <div class="gallery-item" data-index="5">
+            <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=1000&q=80" alt="Sunset sea">
+            <span>Zonsondergang op zee</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="ervaringen">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Beleving</span>
+          <h2>Een interactieve sectie voor vertrouwen en sfeer</h2>
+          <p>
+            Hieronder staat een schuivende testimonial-sectie die de site levendiger maakt en ruimte geeft voor klantreacties.
+          </p>
+        </div>
+
+        <div class="card testimonial-wrap reveal">
+          <div class="testimonial-track" id="testimonialTrack">
+            <div class="testimonial">
+              <p>“Een stijlvolle ervaring van begin tot eind. De site mag dat gevoel perfect uitstralen.”</p>
+              <strong>Familie-uitstap</strong>
+              <small>Voorbeeldtekst – vervang later door echte review</small>
+            </div>
+            <div class="testimonial">
+              <p>“Professioneel, rustig en tegelijk warm. Exact het soort presentatie dat past bij een luxe charter.”</p>
+              <strong>Bedrijfsevent</strong>
+              <small>Voorbeeldtekst – vervang later door echte review</small>
+            </div>
+            <div class="testimonial">
+              <p>“De combinatie van zeilen, comfort en gastronomie maakt dit veel aantrekkelijker dan een gewone uitstap.”</p>
+              <strong>Koppel / privétocht</strong>
+              <small>Voorbeeldtekst – vervang later door echte review</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Interactieve veelgestelde vragen</h2>
+          <p>
+            Een accordion houdt de pagina strak, maar geeft toch snel antwoord op de belangrijkste vragen.
+          </p>
+        </div>
+
+        <div class="faq">
+          <div class="card faq-item reveal">
+            <button class="faq-q">
+              <span>Heb ik zeilervaring nodig?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Nee, de begeleiding gebeurt door een ervaren schipper en de veiligheidsinstructies worden voor vertrek doorgenomen.
+              </div>
+            </div>
+          </div>
+
+          <div class="card faq-item reveal">
+            <button class="faq-q">
+              <span>Welke types arrangementen zijn mogelijk?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Dagtochten, weekend- en midweekarrangementen, verrassingsfeestjes en teambuildings passen allemaal binnen het concept.
+              </div>
+            </div>
+          </div>
+
+          <div class="card faq-item reveal">
+            <button class="faq-q">
+              <span>Wat is aan boord aanwezig?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                U beschikt over gastenkajuiten, douche, ingerichte keuken, leefruimte, wifi, televisie en bar.
+              </div>
+            </div>
+          </div>
+
+          <div class="card faq-item reveal">
+            <button class="faq-q">
+              <span>Kan het ook voor bedrijven of groepen?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                Ja, de formule past goed bij teambuilding, privéfeesten en kleine exclusieve bedrijfsevents.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="card contact-box reveal">
+          <div>
+            <span class="eyebrow">Contact & boeking</span>
+            <h3>Maak van deze pagina een echte converterende landingspagina</h3>
+            <p>
+              Met een sterke visuele opbouw, duidelijke knoppen en een professionele contactsectie wordt deze pagina niet alleen mooier,
+              maar ook veel effectiever om bezoekers in aanvragen om te zetten.
+            </p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="tel:+32465084288" class="btn btn-primary">Bel 0465 08 42 88</a>
+              <a href="mailto:yemayazeilcharter@telenet.be" class="btn btn-outline">Stuur een e-mail</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="contact-grid">
+              <div class="contact-mini">
+                <h4>Ligplaats</h4>
+                <p>Jachthaven Wemeldinge J11<br>Sluisplateau 29<br>4424 BK Wemeldinge<br>Nederland</p>
+              </div>
+              <div class="contact-mini">
+                <h4>Facturatie</h4>
+                <p>Weiveld 56<br>9255 Buggenhout<br>België</p>
+              </div>
+              <div class="contact-mini">
+                <h4>Direct contact</h4>
+                <p><a href="tel:+32465084288">0465 08 42 88</a></p>
+                <p><a href="mailto:yemayazeilcharter@telenet.be">yemayazeilcharter@telenet.be</a></p>
+                <p>
+                  <a href="https://wa.me/+32465084288" target="_blank">WhatsApp</a> ·
+                  <a href="https://facebook.com/" target="_blank">Facebook</a> ·
+                  <a href="https://instagram.com/" target="_blank">Instagram</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Sluiten">✕</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Vorige">‹</button>
+      <img id="lightboxImage" src="" alt="Gallery image">
+      <button class="lightbox-next" id="lightboxNext" aria-label="Volgende">›</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>BE 0507 743 134</div>
+      <div class="footer-links">
+        <a href="/privacy">Privacyverklaring</a>
+        <a href="https://de.cdn-website.com/92943ac76b14414b994f15e2ca46039d/files/uploaded/Algemene%2520voorwaarden%2520YZ.pdf" target="_blank">Algemene voorwaarden</a>
+        <a href="https://www2.telenet.be/online-essentials" target="_blank">Powered by Telenet Business Online Essentials</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuToggle.textContent = mobileMenu.classList.contains('open') ? '✕' : '☰';
+    });
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // Hero slider
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const dotsWrap = document.getElementById('heroDots');
+    let slideIndex = 0;
+    let heroTimer;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.querySelectorAll('button'));
+
+    function goToSlide(i){
+      slides[slideIndex].classList.remove('active');
+      dots[slideIndex].classList.remove('active');
+      slideIndex = (i + slides.length) % slides.length;
+      slides[slideIndex].classList.add('active');
+      dots[slideIndex].classList.add('active');
+    }
+
+    function nextSlide(){ goToSlide(slideIndex + 1); }
+    function prevSlide(){ goToSlide(slideIndex - 1); }
+
+    document.getElementById('nextSlide')?.addEventListener('click', () => {
+      nextSlide();
+      resetHeroTimer();
+    });
+    document.getElementById('prevSlide')?.addEventListener('click', () => {
+      prevSlide();
+      resetHeroTimer();
+    });
+
+    function startHeroTimer(){
+      heroTimer = setInterval(nextSlide, 5000);
+    }
+    function resetHeroTimer(){
+      clearInterval(heroTimer);
+      startHeroTimer();
+    }
+    startHeroTimer();
+
+    // Tabs
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    // Reveal on scroll
+    const revealItems = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: .16 });
+    revealItems.forEach(item => io.observe(item));
+
+    // Counter animation
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        let current = 0;
+        const duration = 1300;
+        const stepTime = Math.max(20, Math.floor(duration / target));
+        const tick = setInterval(() => {
+          current += Math.ceil(target / 35);
+          if(current >= target){
+            current = target;
+            clearInterval(tick);
+          }
+          el.textContent = current;
+        }, stepTime);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: .7 });
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    // Testimonial slider
+    const testimonialTrack = document.getElementById('testimonialTrack');
+    const testimonialCount = testimonialTrack.children.length;
+    let testimonialIndex = 0;
+    setInterval(() => {
+      testimonialIndex = (testimonialIndex + 1) % testimonialCount;
+      testimonialTrack.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+    }, 5200);
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const btn = item.querySelector('.faq-q');
+      const panel = item.querySelector('.faq-a');
+      btn.addEventListener('click', () => {
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(other => {
+          other.classList.remove('open');
+          other.querySelector('.faq-a').style.maxHeight = null;
+          other.querySelector('.faq-q span:last-child').textContent = '+';
+        });
+        if(!open){
+          item.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          btn.querySelector('span:last-child').textContent = '–';
+        }
+      });
+    });
+
+    // Lightbox gallery
+    const galleryImages = Array.from(document.querySelectorAll('#galleryGrid .gallery-item img'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    let galleryIndex = 0;
+
+    function openLightbox(index){
+      galleryIndex = index;
+      lightboxImage.src = galleryImages[galleryIndex].src;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function showPrevImage(){
+      galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+      lightboxImage.src = galleryImages[galleryIndex].src;
+    }
+
+    function showNextImage(){
+      galleryIndex = (galleryIndex + 1) % galleryImages.length;
+      lightboxImage.src = galleryImages[galleryIndex].src;
+    }
+
+    galleryImages.forEach((img, index) => {
+      img.parentElement.addEventListener('click', () => openLightbox(index));
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', showPrevImage);
+    lightboxNext.addEventListener('click', showNextImage);
+    lightbox.addEventListener('click', (e) => {
+      if(e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if(!lightbox.classList.contains('open')) return;
+      if(e.key === 'Escape') closeLightbox();
+      if(e.key === 'ArrowLeft') showPrevImage();
+      if(e.key === 'ArrowRight') showNextImage();
+    });
+
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('main section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          navAnchors.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+          if(active) active.classList.add('active');
+        }
+      });
+    }, { threshold: .45 });
+    sections.forEach(section => spy.observe(section));
+  </script>
+</body>
+</html>
+
+
+
+
